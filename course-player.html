@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Player - Learning Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Learning Platform</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="course-player">
+            <div class="course-header">
+                <h2>Web Development Fundamentals</h2>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 25%;"></div>
+                </div>
+                <p>Progress: 25%</p>
+            </div>
+            
+            <div class="course-content">
+                <div class="video-container">
+                    <video controls>
+                        <source src="assets/sample-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <div class="course-info">
+                    <h3>Module 1: HTML Basics</h3>
+                    <p>In this module, you'll learn the fundamentals of HTML including tags, attributes, and document structure.</p>
+                    
+                    <div class="course-materials">
+                        <h4>Course Materials:</h4>
+                        <ul>
+                            <li><a href="#">Lesson 1: Introduction to HTML</a></li>
+                            <li><a href="#">Lesson 2: Common HTML Tags</a></li>
+                            <li><a href="#">Lesson 3: Forms and Input</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="course-navigation">
+                <button class="prev-btn">Previous Lesson</button>
+                <button class="next-btn">Next Lesson</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Learning Platform. All rights reserved.</p>
+    </footer>
+
+    <script src="js/certificate.js"></script>
+</body>
+</html>

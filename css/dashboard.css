@@ -1,0 +1,5 @@
+/* ===== DASHBOARD BACKGROUND - CLEAN ===== */
+body {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    min-height: 100vh;
+}

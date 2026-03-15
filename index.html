@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlineGuru - World-Class Learning Platform</title>
+    <meta name="description" content="Learn from 100+ expert-led courses in programming, data science, business and more. Start your learning journey today.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=2.0">
+</head>
+<body class="page-home">
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Loading OnlineGuru...</p>
+        </div>
+    </div>
+
+    <div class="app-wrapper">
+        <header>
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>OnlineGuru</span>
+                </a>
+                
+                <nav class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <div class="auth-buttons" id="guest-nav">
+                    <button class="btn-icon" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+
+                <div class="user-menu" id="user-nav" style="display: none;">
+                    <button class="btn-icon" id="theme-toggle-user">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="dashboard.html" class="btn btn-outline">
+                        <i class="fas fa-user-circle"></i> <span id="user-name">User</span>
+                    </a>
+                    <a href="#" id="logout-btn" class="btn btn-primary">Logout</a>
+                </div>
+
+                <button class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Unlock Your Potential with OnlineGuru</h1>
+                    <p>Join over 100,000+ learners mastering new skills with expert-led courses in tech, business, and creative fields.</p>
+                    <div class="hero-buttons">
+                        <a href="courses.html" class="btn btn-primary">Explore Courses</a>
+                        <a href="about.html" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Why Choose OnlineGuru?</h2>
+                <div class="grid">
+                    <div class="glass-card">
+                        <i class="fas fa-video" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                        <h3>100+ Expert-Led Courses</h3>
+                        <p>Learn from industry professionals with real-world experience.</p>
+                    </div>
+                    <div class="glass-card">
+                        <i class="fas fa-clock" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                        <h3>Learn at Your Pace</h3>
+                        <p>Access course materials 24/7 and learn on your schedule.</p>
+                    </div>
+                    <div class="glass-card">
+                        <i class="fas fa-certificate" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                        <h3>Earn Certificates</h3>
+                        <p>Get certified and showcase your skills to employers.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container">
+                <div class="glass-card" style="text-align: center; padding: 4rem;">
+                    <i class="fas fa-graduation-cap" style="font-size: 4rem; color: var(--primary); margin-bottom: 2rem;"></i>
+                    <h2 style="margin-bottom: 1.5rem; font-size: 2.5rem;">Welcome to OnlineGuru</h2>
+                    <p style="color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Your gateway to world-class education. Explore our comprehensive course catalog and start your learning journey today.
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="courses.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 12px 24px;">
+                            <i class="fas fa-book-open"></i> Browse Courses
+                        </a>
+                        <a href="about.html" class="btn btn-outline-primary" style="font-size: 1.1rem; padding: 12px 24px;">
+                            <i class="fas fa-info-circle"></i> Learn More
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+                        <i class="fas fa-graduation-cap"></i> OnlineGuru
+                    </a>
+                    <p style="color: var(--text-secondary);">Empowering the next generation of learners worldwide.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center">&copy; 2026 OnlineGuru. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

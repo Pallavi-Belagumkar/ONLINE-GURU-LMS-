@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses | OnlineGuru</title>
+    <meta name="description" content="Browse 100+ expert-led courses in programming, data science, business, and more.">
+    <link rel="stylesheet" href="css/style.css?v=2.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="page-courses">
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Loading courses...</p>
+        </div>
+    </div>
+
+    <div class="app-wrapper">
+        <header>
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>OnlineGuru</span>
+                </a>
+                
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="courses.html" class="active">Courses</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <div class="auth-buttons" id="guest-nav">
+                    <button class="btn-icon" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-outline">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+
+                <div class="user-menu" id="user-nav" style="display: none;">
+                    <button class="btn-icon" id="theme-toggle-user">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="dashboard.html" class="btn btn-outline">
+                        <i class="fas fa-user-circle"></i> <span id="user-name">User</span>
+                    </a>
+                    <a href="#" id="logout-btn" class="btn btn-primary">Logout</a>
+                </div>
+
+                <button class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="container">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h1 style="font-size: 3rem; margin-bottom: 1rem;">Our Courses</h1>
+                    <p style="color: var(--text-secondary); font-size: 1.2rem;">Choose from 100+ expert-led courses and start learning today</p>
+                </div>
+
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Courses</button>
+                    <button class="filter-btn" data-filter="python">Python</button>
+                    <button class="filter-btn" data-filter="web development">Web Development</button>
+                    <button class="filter-btn" data-filter="data science">Data Science</button>
+                    <button class="filter-btn" data-filter="sap">SAP</button>
+                    <button class="filter-btn" data-filter="app development">App Development</button>
+                    <button class="filter-btn" data-filter="ai & ml">AI & ML</button>
+                    <button class="filter-btn" data-filter="data structure and algorithm">Data Structure And Algorithm</button>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <input type="text" id="search-courses" class="form-control" placeholder="Search courses..." style="max-width: 400px; margin: 0 auto; display: block;">
+                </div>
+
+                <div class="courses-grid" id="courses-grid">
+                    <!-- All courses will be loaded here by JavaScript with glass-card style -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">
+                        <i class="fas fa-graduation-cap"></i> OnlineGuru
+                    </a>
+                    <p style="color: var(--text-secondary);">Empowering the next generation of learners worldwide.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center">&copy; 2026 OnlineGuru. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/courses.js"></script>
+    <script>
+        // Initialize courses when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.Courses) {
+                window.Courses.init();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | OnlineGuru</title>
+    <meta name="description" content="Your personalized learning dashboard - track progress, view certificates, and continue learning.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="page-dashboard">
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Loading your dashboard...</p>
+        </div>
+    </div>
+
+    <div class="app-wrapper">
+        <header>
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>OnlineGuru</span>
+                </a>
+                
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="dashboard.html" class="active">Dashboard</a>
+                </nav>
+
+                <div class="user-menu" id="user-nav">
+                    <button class="btn-icon" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="#" class="btn btn-outline" id="user-profile-btn">
+                        <i class="fas fa-user-circle"></i> <span id="user-name" class="user-name">User</span>
+                    </a>
+                    <a href="#" id="logout-btn" class="btn btn-primary">Logout</a>
+                </div>
+
+                <button class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="dashboard-sidebar">
+                <div class="sidebar-header">
+                    <div class="user-avatar-large">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="user-info">
+                        <h3 class="user-name">Loading...</h3>
+                        <p class="user-email">Loading...</p>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item active" data-section="overview">
+                        <i class="fas fa-th-large"></i>
+                        <span>Overview</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="courses">
+                        <i class="fas fa-book-open"></i>
+                        <span>My Courses</span>
+                        <span class="nav-badge" id="total-courses">0</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="progress">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Progress</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="certificates">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certificates</span>
+                        <span class="nav-badge" id="certificate-count">0</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="calendar">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Calendar</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="progress-widget">
+                        <h4>Overall Progress</h4>
+                        <div class="progress-label">
+                            <span>Course Completion</span>
+                            <span id="avg-progress">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="overall-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="dashboard-content">
+                <!-- Overview Section -->
+                <section id="overview-section" class="content-section active">
+                    <div class="section-header">
+                        <h1 class="welcome-message">Welcome back!</h1>
+                        <p>Here's what's happening with your learning journey</p>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="total-courses-stat">0</h3>
+                                <p>Enrolled Courses</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-spinner"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="in-progress-stat">0</h3>
+                                <p>In Progress</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="completed-courses-stat">0</h3>
+                                <p>Completed</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="certificates-stat">0</h3>
+                                <p>Certificates</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-top: 2rem;">
+                        <div class="glass-card">
+                            <h3 style="margin-bottom: 1.5rem;">Recent Activity</h3>
+                            <div id="recent-activity" class="activity-feed">
+                                <!-- Activity will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card">
+                            <h3 style="margin-bottom: 1.5rem;">Recommended Courses</h3>
+                            <div id="recommended-courses">
+                                <!-- Recommended courses will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- My Courses Section -->
+                <section id="courses-section" class="content-section">
+                    <div class="section-header">
+                        <h1>My Courses</h1>
+                        <p>Continue learning where you left off</p>
+                    </div>
+                    
+                    <div id="my-courses-list" class="courses-progress">
+                        <!-- Courses will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Progress Section -->
+                <section id="progress-section" class="content-section">
+                    <div class="section-header">
+                        <h1>Learning Progress</h1>
+                        <p>Track your detailed progress across all courses</p>
+                    </div>
+                    
+                    <div id="progress-list" class="progress-list">
+                        <!-- Progress will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Certificates Section -->
+                <section id="certificates-section" class="content-section">
+                    <div class="section-header">
+                        <h1>My Certificates</h1>
+                        <p>Your earned credentials</p>
+                    </div>
+                    
+                    <div id="certificates-list" class="certificates-grid">
+                        <!-- Certificates will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Calendar Section -->
+                <section id="calendar-section" class="content-section">
+                    <div class="section-header">
+                        <h1>Learning Calendar</h1>
+                        <p>Your study schedule and deadlines</p>
+                    </div>
+                    
+                    <div id="calendar" class="calendar-container">
+                        <!-- Calendar will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Settings Section -->
+                <section id="settings-section" class="content-section">
+                    <div class="section-header">
+                        <h1>Account Settings</h1>
+                        <p>Manage your account preferences</p>
+                    </div>
+                    
+                    <div class="glass-card">
+                        <h3 style="margin-bottom: 1.5rem;">Profile Information</h3>
+                        <form id="settings-form">
+                            <div class="form-group">
+                                <label for="settings-name">Full Name</label>
+                                <input type="text" id="settings-name" class="form-control" value="Loading...">
+                            </div>
+                            <div class="form-group">
+                                <label for="settings-email">Email Address</label>
+                                <input type="email" id="settings-email" class="form-control" value="Loading..." readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="settings-notifications">Email Notifications</label>
+                                <select id="settings-notifications" class="form-control">
+                                    <option value="all">All notifications</option>
+                                    <option value="important">Important only</option>
+                                    <option value="none">None</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/courses.js"></script>
+    <script src="js/certificate.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        // Settings form handler
+        document.getElementById('settings-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            showNotification('Settings saved successfully!', 'success');
+        });
+    </script>
+</body>
+</html>
